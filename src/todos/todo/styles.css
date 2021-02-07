@@ -2,12 +2,12 @@
     list-style-type: none;
     flex: 1;
     text-align: center;
-    background: beige;
+    background: #F5F5DC;
     width: 300px;
     margin: 20px auto;
     padding: 10px;
     border-radius: 6px;
-    border: 1px solid gray;
+    border: 1px solid #808080;
 }
 
 .todo-title {
