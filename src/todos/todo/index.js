@@ -4,7 +4,7 @@ import './styles.css';
 const TodoItem = props => {
     return (
         <li className="todo">
-            <h3>{props.todo.text}</h3>
+            <h3>{props.todo.title}</h3>
             <div>{props.todo.text}</div>
             <div>{props.todo.name}</div>
         </li>
