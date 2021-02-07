@@ -1,22 +1,14 @@
 import React from 'react';
-// import todos from '../mock';
 
-const Todo = (props) => {
-    console.log(props);
+import './styles.css';
+const TodoItem = props => {
     return (
-        <ul className="todoList">
-        {
-          props.todos.map((todo) => {
-            return (
-                <li className="todo" key={todo.id}>
-                    <div>{todo.text}</div>
-                    <div>{todo.name}</div>
-                </li>
-            )
-          })
-        }
-      </ul>
+        <li className="todo">
+            <h3>{props.todo.text}</h3>
+            <div>{props.todo.text}</div>
+            <div>{props.todo.name}</div>
+        </li>
     )
 }
 
-export default TodoList;
+export default TodoItem;

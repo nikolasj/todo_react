@@ -1,5 +1,7 @@
 import React from 'react';
-// import todos from '../mock';
+
+import TodoItem from "./todo";
+import './styles.css';
 
 const TodoList = (props) => {
     console.log(props);
@@ -8,10 +10,7 @@ const TodoList = (props) => {
         {
           props.todos.map((todo) => {
             return (
-                <li className="todo" key={todo.id}>
-                    <div>{todo.text}</div>
-                    <div>{todo.name}</div>
-                </li>
+                <TodoItem todo={todo} key={todo.id}/>
             )
           })
         }
