@@ -4,15 +4,14 @@ import Modal from "../modal";
 import './styles.css';
 
 const TodoList = (props) => {
-  const [isOpened, setOpen] = React.useState(false);
+  // const [isOpened, setOpen] = React.useState(false);
   const [openedId, setOpenedId] = React.useState(null);
 
   const close = () =>{
-    setOpen(!isOpened);
+    setOpenedId(null);
   };
 
   const openModal = (id) => {
-    setOpen(true);
     setOpenedId(id);
   };
 
@@ -31,7 +30,7 @@ const TodoList = (props) => {
           })
         }
       </ul>
-      {todo && <Modal title={todo.title} isOpened={isOpened} onClose={close}>{todo.text}</Modal>}
+      {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
     </>
   );
 };
