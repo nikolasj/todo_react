@@ -16,6 +16,10 @@ const TodoList = (props) => {
     setOpenedId(id);
   };
 
+  const todo = props.todos.filter(function(todo) {
+      return todo.id === openedId;
+  })
+
   return (
     <>
       <ul className="todoList">
@@ -27,7 +31,7 @@ const TodoList = (props) => {
           })
         }
       </ul>
-      <Modal todo={} isOpened={isOpened} onClose={close} />
+        <Modal title={todo.title} isOpened={isOpened} onClose={close}>{todo.text}</Modal>
     </>
   );
 };
