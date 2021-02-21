@@ -16,9 +16,9 @@ const TodoList = (props) => {
     setOpenedId(id);
   };
 
-  const todo = props.todos.filter(function(todo) {
+  const todo = props.todos.find(function(todo) {
       return todo.id === openedId;
-  })
+  });
 
   return (
     <>
@@ -31,7 +31,7 @@ const TodoList = (props) => {
           })
         }
       </ul>
-        <Modal title={todo.title} isOpened={isOpened} onClose={close}>{todo.text}</Modal>
+      {todo && <Modal title={todo.title} isOpened={isOpened} onClose={close}>{todo.text}</Modal>}
     </>
   );
 };
