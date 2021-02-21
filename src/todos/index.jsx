@@ -5,13 +5,15 @@ import './styles.css';
 
 const TodoList = (props) => {
   const [isOpened, setOpen] = React.useState(false);
+  const [openedId, setOpenedId] = React.useState(null);
 
   const close = () =>{
     setOpen(!isOpened);
   };
 
-  const openModal = () =>{
+  const openModal = (id) => {
     setOpen(true);
+    setOpenedId(id);
   };
 
   return (
@@ -20,12 +22,12 @@ const TodoList = (props) => {
         {
           props.todos.map((todo) => {
             return (
-              <TodoItem todo={todo} key={todo.id} onClick={openModal} />
+              <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
             )
           })
         }
       </ul>
-      <Modal isOpened={isOpened} onClose={close} />
+      <Modal todo={} isOpened={isOpened} onClose={close} />
     </>
   );
 };

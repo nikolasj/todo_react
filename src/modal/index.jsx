@@ -11,7 +11,8 @@ const Modal = props => {
       {/*<div className="modal-close" onClick={props.onClose}>Close</div>*/}
       <div className="modal-container">
         <div>
-            <div>Modal</div>
+            <h2>{props.title}</h2>
+            <div>{props.children}</div>
             <div className="modal-close-container" onClick={props.onClose}>Ok</div>
         </div>
       </div>
