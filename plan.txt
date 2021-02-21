@@ -1,7 +1,7 @@
-1. list of todos
+1. list of todos +
 2. api for todos
-3. search
-4. page of todo
+3. search +
+4. modal for todo +
 4. create
 5. delete
 6. infinity scroll

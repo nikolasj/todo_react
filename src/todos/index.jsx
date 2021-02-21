@@ -4,10 +4,9 @@ import Modal from "../modal";
 import './styles.css';
 
 const TodoList = (props) => {
-  // const [isOpened, setOpen] = React.useState(false);
   const [openedId, setOpenedId] = React.useState(null);
 
-  const close = () =>{
+  const close = () => {
     setOpenedId(null);
   };
 
