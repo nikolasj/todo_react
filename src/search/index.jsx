@@ -1,4 +1,5 @@
 import React from 'react';
+import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
 import './styles.css';
 
 const Search = props => {
@@ -7,13 +8,16 @@ const Search = props => {
   };
 
   return (
-    <input
-      type="text"
-      className="search"
-      value={props.value}
-      onChange={onChangeHandler}
-      placeholder="Searching"
-    />
+    <>
+      <SearchIcon />
+      <input
+        type="text"
+        className="search"
+        value={props.value}
+        onChange={onChangeHandler}
+        placeholder="Searching"
+      />
+    </>
   );
 };
 

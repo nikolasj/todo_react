@@ -26,6 +26,8 @@ const TodoList = (props) => {
 
   const todosByQuery = props.todos.filter(todo => todo.title.includes(query));
   const todos = query ? todosByQuery : props.todos;
+  const noResults = <div className="noResults">Ничего не найдено</div>;
+  const isResults = query && todosByQuery?.length;
 
   return (
     <>
@@ -33,7 +35,8 @@ const TodoList = (props) => {
         <Search value={query} onChange={searchUpdate} />
       </div>
       <ul className="todo-list">
-        {
+        {!isResults && noResults}
+        {isResults &&
           todos.map((todo) => {
             return (
               <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
