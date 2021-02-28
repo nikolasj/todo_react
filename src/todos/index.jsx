@@ -1,10 +1,12 @@
 import React from 'react';
 import TodoItem from "./todo";
 import Modal from "../modal";
+import Search from "../search";
 import './styles.css';
 
 const TodoList = (props) => {
   const [openedId, setOpenedId] = React.useState(null);
+  const [searchText, setSearchText] = React.useState("");
 
   const close = () => {
     setOpenedId(null);
@@ -12,6 +14,11 @@ const TodoList = (props) => {
 
   const openModal = (id) => {
     setOpenedId(id);
+  };
+
+  const searchUpdate = (text) => {
+    setSearchText(text);
+    console.log(searchText)
   };
 
   const todo = props.todos.find(function(todo) {
@@ -29,6 +36,7 @@ const TodoList = (props) => {
           })
         }
       </ul>
+      <Search {... { searchUpdate }} />
       {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
     </>
   );
