@@ -24,6 +24,9 @@ const TodoList = (props) => {
       return todo.id === openedId;
   });
 
+  const todosByQuery = props.todos.filter(todo => todo.title === query);
+  const todos = query ? todosByQuery : props.todos;
+
   return (
     <>
       <div className="search-wrap">
@@ -31,7 +34,7 @@ const TodoList = (props) => {
       </div>
       <ul className="todo-list">
         {
-          props.todos.map((todo) => {
+          todos.map((todo) => {
             return (
               <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
             )
