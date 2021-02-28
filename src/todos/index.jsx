@@ -26,7 +26,10 @@ const TodoList = (props) => {
 
   return (
     <>
-      <ul className="todoList">
+      <div className="search-wrap">
+        <Search value={query} onChange={searchUpdate} />
+      </div>
+      <ul className="todo-list">
         {
           props.todos.map((todo) => {
             return (
@@ -35,7 +38,6 @@ const TodoList = (props) => {
           })
         }
       </ul>
-      <Search value={query} onChange={searchUpdate} />
       {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
     </>
   );

@@ -1,9 +1,6 @@
 .search {
-    position: absolute;
-    right: 20px;
-    top: 0;
     cursor: pointer;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 input:focus {
