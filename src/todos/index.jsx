@@ -24,7 +24,7 @@ const TodoList = (props) => {
       return todo.id === openedId;
   });
 
-  const todosByQuery = props.todos.filter(todo => todo.title === query);
+  const todosByQuery = props.todos.filter(todo => todo.title.includes(query));
   const todos = query ? todosByQuery : props.todos;
 
   return (
