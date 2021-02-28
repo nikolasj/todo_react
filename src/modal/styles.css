@@ -14,13 +14,91 @@
 }
 
 .modal-container {
-    height: 100%;
     padding: 20px;
+    background: beige;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid #808080;
 }
 
 .modal-close {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 10px;
+    cursor: pointer;
+    content: "\00d7";
+}
+
+.modal-close-container {
+    margin-top: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    background-color: #e7e7e7;
+    border-radius: 10px;
     cursor: pointer;
 }
+
+
+
+/*.outer {*/
+/*  position: relative;*/
+/*  margin: auto;*/
+/*  width: 70px;*/
+/*  margin-top: 200px;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.inner {*/
+/*  width: inherit;*/
+/*  text-align: center;*/
+/*}*/
+
+/*label {*/
+/*  font-size: .8em;*/
+/*  line-height: 4em;*/
+/*  text-transform: uppercase;*/
+/*  color: #fff;*/
+/*  transition: all .3s ease-in;*/
+/*  opacity: 0;*/
+/*  cursor: pointer;*/
+/*}*/
+
+/*.inner:before, .inner:after {*/
+/*  position: absolute;*/
+/*  content: '';*/
+/*  height: 1px;*/
+/*  width: inherit;*/
+/*  background: #FFC107;*/
+/*  left: 0;*/
+/*  transition: all .3s ease-in;*/
+/*}*/
+
+/*.inner:before {*/
+/*  top: 50%;*/
+/*  transform: rotate(45deg);*/
+/*}*/
+
+/*.inner:after {*/
+/*  bottom: 50%;*/
+/*  transform: rotate(-45deg);*/
+/*}*/
+
+/*.outer:hover label {*/
+/*  opacity: 1;*/
+/*}*/
+
+/*.outer:hover .inner:before,*/
+/*.outer:hover .inner:after {*/
+/*  transform: rotate(0);*/
+/*}*/
+
+/*.outer:hover .inner:before {*/
+/*  top: 0;*/
+/*}*/
+
+/*.outer:hover .inner:after {*/
+/*  bottom: 0;*/
+/*}*/

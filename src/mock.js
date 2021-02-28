@@ -2,7 +2,7 @@ const todos = [
     {
         id: 1,
         title: 'title for todo1',
-        text: 'todo1',
+        text: 'todo1 todo1todo1todo1 todo1 todo1todo1todo1 todo1 todo1todo1todo1 todo1 todo1todo1todo1 ',
         name: 'Vlad',
     },
     {
