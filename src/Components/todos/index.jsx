@@ -6,11 +6,14 @@ import Search from "../search";
 import './styles.scss';
 
 const TodoList = (props) => {
+  const [todos2, setTodos] = React.useState([]);
   const [openedId, setOpenedId] = React.useState(null);
   const [query, setQuery] = React.useState("");
 
   React.useEffect(() => {
-    getTodos();
+    getTodos().then(res => {
+      setTodos(res)
+    });
   }, []);
 
   const close = () => {

@@ -1,16 +1,13 @@
 import axios from 'axios';
 
 export function getTodos() {
-  axios.get('https://jsonplaceholder.typicode.com/todos')
+  return axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(function (response) {
       // handle success
-      console.log(response);
+      return response.data;
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     })
-    .then(function () {
-      // always executed
-    });
 }
