@@ -1,6 +1,6 @@
 import React from 'react';
 import todos from './mock';
-import TodoList from './todos';
+import TodoList from './Components/todos';
 import './App.css';
 
 function App() {

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom";
 import cn from "classnames";
 import './styles.scss';
-import {ReactComponent as CloseIcon} from "../assets/icons/close.svg";
+import {ReactComponent as CloseIcon} from "../../assets/icons/close.svg";
 
 const root = document.getElementById('root');
 
