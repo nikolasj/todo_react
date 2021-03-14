@@ -1,4 +1,5 @@
 import React from 'react';
+import { getTodos } from '../../Api';
 import TodoItem from "./todo";
 import Modal from "../modal";
 import Search from "../search";
@@ -7,6 +8,10 @@ import './styles.scss';
 const TodoList = (props) => {
   const [openedId, setOpenedId] = React.useState(null);
   const [query, setQuery] = React.useState("");
+
+  React.useEffect(() => {
+    getTodos();
+  }, []);
 
   const close = () => {
     setOpenedId(null);
