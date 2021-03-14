@@ -2,7 +2,7 @@ import React from 'react';
 import TodoItem from "./todo";
 import Modal from "../modal";
 import Search from "../search";
-import './styles.css';
+import './styles.scss';
 
 const TodoList = (props) => {
   const [openedId, setOpenedId] = React.useState(null);
@@ -27,7 +27,7 @@ const TodoList = (props) => {
   const todosByQuery = props.todos.filter(todo => todo.title.includes(query));
   const todos = query ? todosByQuery : props.todos;
   const noResults = <div className="noResults">Ничего не найдено</div>;
-  const isResults = query && todosByQuery?.length;
+  const isResults = todosByQuery?.length;
 
   return (
     <>
@@ -36,7 +36,7 @@ const TodoList = (props) => {
       </div>
       <ul className="todo-list">
         {!isResults && noResults}
-        {isResults &&
+        {
           todos.map((todo) => {
             return (
               <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
@@ -50,3 +50,6 @@ const TodoList = (props) => {
 };
 
 export default TodoList;
+
+// isResults &&
+// {!isResults && noResults}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ReactComponent as SearchIcon } from "../assets/icons/search.svg";
-import './styles.css';
+import './styles.scss';
 
 const Search = props => {
   const onChangeHandler = ({ currentTarget }) => {
@@ -9,7 +9,7 @@ const Search = props => {
 
   return (
     <>
-      <SearchIcon />
+      <SearchIcon className="search-icon" />
       <input
         type="text"
         className="search"
