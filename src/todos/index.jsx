@@ -34,17 +34,21 @@ const TodoList = (props) => {
       <div className="search-wrap">
         <Search value={query} onChange={searchUpdate} />
       </div>
-      <ul className="todo-list">
-        {!isResults && noResults}
-        {
-          todos.map((todo) => {
-            return (
-              <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
-            )
-          })
-        }
-      </ul>
-      {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
+      {!isResults && noResults}
+      {isResults && (
+      <>
+        <ul className="todo-list">
+          {
+            todos.map((todo) => {
+              return (
+                <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
+              )
+            })
+          }
+        </ul>
+        {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
+      </>
+    )}
     </div>
   );
 };
