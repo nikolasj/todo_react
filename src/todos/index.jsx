@@ -26,7 +26,7 @@ const TodoList = (props) => {
 
   const todosByQuery = props.todos.filter(todo => todo.title.includes(query));
   const todos = query ? todosByQuery : props.todos;
-  const noResults = <div className="noResults">Ничего не найдено</div>;
+  const noResults = <div className="no-results">Ничего не найдено (:</div>;
   const isResults = todosByQuery?.length;
 
   return (
@@ -50,6 +50,3 @@ const TodoList = (props) => {
 };
 
 export default TodoList;
-
-// isResults &&
-// {!isResults && noResults}
