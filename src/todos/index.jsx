@@ -30,7 +30,7 @@ const TodoList = (props) => {
   const isResults = todosByQuery?.length;
 
   return (
-    <>
+    <div className="search">
       <div className="search-wrap">
         <Search value={query} onChange={searchUpdate} />
       </div>
@@ -45,7 +45,7 @@ const TodoList = (props) => {
         }
       </ul>
       {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
-    </>
+    </div>
   );
 };
 
