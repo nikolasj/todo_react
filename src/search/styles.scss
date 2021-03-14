@@ -3,12 +3,16 @@
     border-radius: 5px;
 }
 
-input:focus {
-    border-color: cornflowerblue;
+input {
+    height: 20px;
+
+    &:focus {
+        border-color: cornflowerblue;
+    }
 }
 
 .search-icon {
-    position: relative;
-    right: 2px;
-    top: 2px;
+    position: absolute;
+    right: 6px;
+    top: 6px;
 }
