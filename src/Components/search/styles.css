@@ -5,6 +5,8 @@
     position: absolute;
     right: 6px;
     top: 6px; }
+    .search .search-icon path {
+      fill: #20211E; }
 
 input {
   height: 20px; }
