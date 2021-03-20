@@ -7,9 +7,8 @@
   margin: 20px auto;
   padding: 10px;
   border-radius: 6px;
-  border: 1px solid #808080;
+  border: 1px solid #808080; }
+  .todo .todo-title {
+    margin-top: 0; }
 
-  .todo-title {
-    margin-top: 0;
-  }
-}
+/*# sourceMappingURL=styles.css.map */
