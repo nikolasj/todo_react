@@ -1,5 +1,6 @@
 .search .todo-list {
-  padding: 0; }
+  padding: 0;
+  cursor: default; }
 .search .search-wrap {
   text-align: right;
   top: 2px;
