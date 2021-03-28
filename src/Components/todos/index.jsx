@@ -54,11 +54,17 @@ const TodoList = () => {
           {
             todoList.map((todo) => {
               return (
+                { /* todo:: удалить RemoveTodo */ }
+                { /* todo:: isRemoveId - установка isRemovingId */ }
                 <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} RemoveTodo={() => RemoveTodo(todo.id)} />
               )
             })
           }
         </ul>
+        { /* todo:: onSuccess - это removeTodo */ }
+        { /* todo:: onSuccess затирает isRemoveId */ }
+        { /* todo:: isRemoveId state и реализовать Modal на удаление (передать соотв. props)  */ }
+        { /* isRemovingId && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.body}</Modal> */ }
         {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.body}</Modal>}
       </>
     )}

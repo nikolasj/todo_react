@@ -7,6 +7,8 @@ import {ReactComponent as CloseIcon} from "../../assets/icons/close.svg";
 const root = document.getElementById('root');
 
 const Modal = props => {
+  // todo:: реализовать success функцию, которая вызывает props.onSuccess (опционально)
+
   const modal = (
     <div className={cn("modal", { 'modal--opened': props.isOpened })}>
       <div className="modal-container">
