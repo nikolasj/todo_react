@@ -13,10 +13,12 @@
   .todo-title {
     margin-top: 0;
   }
-}
 
-.todo-remove {
-  position: absolute;
-  margin-top: -38px;
-  right: 672px;
+  .todo-text {
+    margin-bottom: 10px;
+  }
+
+  .todo-controls {
+    text-align: right;
+  }
 }

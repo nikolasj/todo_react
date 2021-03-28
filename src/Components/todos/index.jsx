@@ -9,7 +9,6 @@ const TodoList = () => {
   const [todos, setTodos] = React.useState([]);
   const [openedId, setOpenedId] = React.useState(null);
   const [query, setQuery] = React.useState("");
-  const [removeTodoId, setRemoveTodoId] = React.useState(null);
 
   React.useEffect(() => {
     getTodos().then(res => {
@@ -26,7 +25,8 @@ const TodoList = () => {
   };
 
   const RemoveTodo = (id) => {
-    setRemoveTodoId(id);
+    const newList = todos.filter((todo) => todo.id !== id);
+    setTodos(newList);
   };
 
   const searchUpdate = (text) => {
@@ -38,8 +38,7 @@ const TodoList = () => {
   });
 
   const todosByQuery = todos.filter(todo => todo.title.includes(query));
-  const todoListWithoutId = todos.filter((todo) => todo.id !== removeTodoId);
-  const todoList = query ? todosByQuery : todoListWithoutId;
+  const todoList = query ? todosByQuery : todos;
   const noResults = <div className="no-results">Ничего не найдено (:</div>;
   const isResults = todosByQuery?.length;
 
