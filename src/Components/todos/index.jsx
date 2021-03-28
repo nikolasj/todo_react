@@ -33,7 +33,7 @@ const TodoList = () => {
     setQuery(text);
   };
 
-  const todo = todos.find(function(todo) {
+  const todo = todos.find((todo) => {
       return todo.id === openedId;
   });
 
