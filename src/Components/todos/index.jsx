@@ -9,6 +9,7 @@ const TodoList = () => {
   const [todos, setTodos] = React.useState([]);
   const [openedId, setOpenedId] = React.useState(null);
   const [query, setQuery] = React.useState("");
+  const [removeTodoId, setRemoveTodoId] = React.useState(null);
 
   React.useEffect(() => {
     getTodos().then(res => {
@@ -24,6 +25,10 @@ const TodoList = () => {
     setOpenedId(id);
   };
 
+  const RemoveTodo = (id) => {
+    setRemoveTodoId(id);
+  };
+
   const searchUpdate = (text) => {
     setQuery(text);
   };
@@ -33,7 +38,8 @@ const TodoList = () => {
   });
 
   const todosByQuery = todos.filter(todo => todo.title.includes(query));
-  const todoList = query ? todosByQuery : todos;
+  const todoListWithoutId = todos.filter((todo) => todo.id !== removeTodoId);
+  const todoList = query ? todosByQuery : todoListWithoutId;
   const noResults = <div className="no-results">Ничего не найдено (:</div>;
   const isResults = todosByQuery?.length;
 
@@ -49,7 +55,7 @@ const TodoList = () => {
           {
             todoList.map((todo) => {
               return (
-                <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
+                <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} RemoveTodo={() => RemoveTodo(todo.id)} />
               )
             })
           }
