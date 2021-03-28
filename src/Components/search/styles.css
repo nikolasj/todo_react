@@ -1,0 +1,16 @@
+.search {
+  cursor: pointer;
+  border-radius: 5px; }
+  .search .search-icon {
+    position: absolute;
+    right: 6px;
+    top: 6px; }
+    .search .search-icon path {
+      fill: #20211E; }
+
+input {
+  height: 20px; }
+  input:focus {
+    border-color: cornflowerblue; }
+
+/*# sourceMappingURL=styles.css.map */

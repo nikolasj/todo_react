@@ -1,0 +1,12 @@
+.search .todo-list {
+  padding: 0;
+  cursor: default; }
+.search .search-wrap {
+  text-align: right;
+  top: 2px;
+  right: 5px;
+  position: relative; }
+.search .no-results {
+  text-align: center; }
+
+/*# sourceMappingURL=styles.css.map */

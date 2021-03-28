@@ -8,15 +8,13 @@
   padding: 15px;
   border-radius: 6px;
   border: 1px solid #808080;
-  cursor: pointer;
-
-  .todo-title {
-    margin-top: 0;
-  }
-}
+  cursor: pointer; }
+  .todo .todo-title {
+    margin-top: 0; }
 
 .todo-remove {
   position: absolute;
   margin-top: -38px;
-  right: 672px;
-}
+  right: 672px; }
+
+/*# sourceMappingURL=styles.css.map */

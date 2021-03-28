@@ -6,14 +6,11 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
-
-  &.modal--opened {
+  height: 100vh; }
+  .modal.modal--opened {
     display: flex;
-    align-items: center;
-  }
-
-  .modal-container {
+    align-items: center; }
+  .modal .modal-container {
     padding: 20px;
     background: beige;
     width: 300px;
@@ -21,33 +18,24 @@
     text-align: center;
     margin: 0 auto;
     border-radius: 6px;
-    border: 1px solid #808080;
-  }
-
-
-  .modal-close {
+    border: 1px solid #808080; }
+  .modal .modal-close {
     margin-top: -15px;
     text-align: right;
     margin-right: -10px;
     margin-bottom: -20px;
-    cursor: pointer;
-
-    path {
-      fill: grey;
-    }
-  }
-
-  .modal-close-container {
+    cursor: pointer; }
+    .modal .modal-close path {
+      fill: grey; }
+  .modal .modal-close-container {
     margin-top: 10px;
     margin-right: 100px;
     margin-left: 100px;
     background-color: #e7e7e7;
     border-radius: 10px;
-    cursor: pointer;
-  }
-
-  .close-icon {
+    cursor: pointer; }
+  .modal .close-icon {
     width: 15px;
-    height: 15px;
-  }
-}
+    height: 15px; }
+
+/*# sourceMappingURL=styles.css.map */

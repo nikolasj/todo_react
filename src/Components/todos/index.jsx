@@ -5,10 +5,11 @@ import Modal from "../modal";
 import Search from "../search";
 import './styles.scss';
 
-const TodoList = (props) => {
-  const [todos2, setTodos] = React.useState([]);
+const TodoList = () => {
+  const [todos, setTodos] = React.useState([]);
   const [openedId, setOpenedId] = React.useState(null);
   const [query, setQuery] = React.useState("");
+  const [removeTodoId, setRemoveTodoId] = React.useState(null);
 
   React.useEffect(() => {
     getTodos().then(res => {
@@ -24,16 +25,21 @@ const TodoList = (props) => {
     setOpenedId(id);
   };
 
+  const RemoveTodo = (id) => {
+    setRemoveTodoId(id);
+  };
+
   const searchUpdate = (text) => {
     setQuery(text);
   };
 
-  const todo = props.todos.find(function(todo) {
+  const todo = todos.find(function(todo) {
       return todo.id === openedId;
   });
 
-  const todosByQuery = props.todos.filter(todo => todo.title.includes(query));
-  const todos = query ? todosByQuery : props.todos;
+  const todosByQuery = todos.filter(todo => todo.title.includes(query));
+  const todoListWithoutId = todos.filter((todo) => todo.id !== removeTodoId);
+  const todoList = query ? todosByQuery : todoListWithoutId;
   const noResults = <div className="no-results">Ничего не найдено (:</div>;
   const isResults = todosByQuery?.length;
 
@@ -47,14 +53,14 @@ const TodoList = (props) => {
       <>
         <ul className="todo-list">
           {
-            todos.map((todo) => {
+            todoList.map((todo) => {
               return (
-                <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} />
+                <TodoItem todo={todo} key={todo.id} onClick={() => openModal(todo.id)} RemoveTodo={() => RemoveTodo(todo.id)} />
               )
             })
           }
         </ul>
-        {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.text}</Modal>}
+        {todo && <Modal title={todo.title} isOpened={!!openedId} onClose={close}>{todo.body}</Modal>}
       </>
     )}
     </div>
